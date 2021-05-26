@@ -9,33 +9,33 @@ import { TaskContext } from "../context/tasks";
 import "./HomePage.css";
 
 function HomePage() {
-  const context = useContext(TaskContext);
+  const { todo, wip, done } = useContext(TaskContext);
 
   return (
     <Grid className="homepage-grid" columns={3}>
       <Grid.Column>
         <h1>
-          Todo <span style={{ fontSize: 15 }}>{context.todo.length}</span>
+          Todo <span style={{ fontSize: 15 }}>{todo.length}</span>
         </h1>
-        {context.todo.map((task) => (
+        {todo.map((task) => (
           <Task key={task.id} task={task} />
         ))}
         <AddNew type={"todo"} />
       </Grid.Column>
       <Grid.Column>
         <h1>
-          WIP <span style={{ fontSize: 15 }}>{context.wip.length}</span>
+          WIP <span style={{ fontSize: 15 }}>{wip.length}</span>
         </h1>
-        {context.wip.map((task) => (
+        {wip.map((task) => (
           <Task key={task.id} task={task} />
         ))}
         <AddNew type={"wip"} />
       </Grid.Column>
       <Grid.Column>
         <h1>
-          Done <span style={{ fontSize: 15 }}>{context.done.length}</span>
+          Done <span style={{ fontSize: 15 }}>{done.length}</span>
         </h1>
-        {context.done.map((task) => (
+        {done.map((task) => (
           <Task key={task.id} task={task} />
         ))}
         <AddNew type={"done"} />
