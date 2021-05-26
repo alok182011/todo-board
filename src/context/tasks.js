@@ -22,7 +22,10 @@ function taskReducer(state, action) {
     case "ADDTODO":
       return {
         ...state,
-        todo: [action.payload, ...state.todo],
+        todo:
+          state.todo !== null
+            ? [...state.todo, action.payload]
+            : [action.payload],
       };
     case "REMOVETODO":
       return {
@@ -45,7 +48,10 @@ function taskReducer(state, action) {
     case "ADDWIP":
       return {
         ...state,
-        wip: [action.payload, ...state.wip],
+        wip:
+          state.wip !== null
+            ? [...state.wip, action.payload]
+            : [action.payload],
       };
     case "REMOVEWIP":
       return {
@@ -66,7 +72,10 @@ function taskReducer(state, action) {
     case "ADDDONE":
       return {
         ...state,
-        done: [action.payload, ...state.done],
+        done:
+          state.done !== null
+            ? [...state.done, action.payload]
+            : [action.payload],
       };
     case "REMOVEDONE":
       return {
