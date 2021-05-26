@@ -105,13 +105,13 @@ function TaskProvider(props) {
   const [state, dispatch] = useReducer(taskReducer, initialState);
 
   useEffect(() => {
-    if (state.todo.length >= 0) {
+    if (state.todo !== null && state.todo.length >= 0) {
       localStorage.setItem("todo", JSON.stringify(state.todo));
     }
-    if (state.wip.length >= 0) {
+    if (state.wip !== null && state.wip.length >= 0) {
       localStorage.setItem("wip", JSON.stringify(state.wip));
     }
-    if (state.done.length >= 0) {
+    if (state.done !== null && state.done.length >= 0) {
       localStorage.setItem("done", JSON.stringify(state.done));
     }
   }, [state.todo, state.wip, state.done]);
