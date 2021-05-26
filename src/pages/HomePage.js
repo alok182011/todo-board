@@ -15,7 +15,10 @@ function HomePage() {
     <Grid className="homepage-grid" columns={3}>
       <Grid.Column>
         <h1>
-          Todo <span style={{ fontSize: 15 }}>{todo.length}</span>
+          Todo{" "}
+          <span style={{ fontSize: 15 }}>
+            {todo.length !== null ? todo.length : 0}
+          </span>
         </h1>
         {todo.map((task) => (
           <Task key={task.id} task={task} />
@@ -24,7 +27,10 @@ function HomePage() {
       </Grid.Column>
       <Grid.Column>
         <h1>
-          WIP <span style={{ fontSize: 15 }}>{wip.length}</span>
+          WIP{" "}
+          <span style={{ fontSize: 15 }}>
+            {wip.length !== null ? wip.length : 0}
+          </span>
         </h1>
         {wip.map((task) => (
           <Task key={task.id} task={task} />
@@ -33,7 +39,10 @@ function HomePage() {
       </Grid.Column>
       <Grid.Column>
         <h1>
-          Done <span style={{ fontSize: 15 }}>{done.length}</span>
+          Done{" "}
+          <span style={{ fontSize: 15 }}>
+            {done.length !== null ? done.length : 0}
+          </span>
         </h1>
         {done.map((task) => (
           <Task key={task.id} task={task} />
