@@ -20,9 +20,9 @@ function HomePage() {
             {todo !== null ? todo.length : 0}
           </span>
         </h1>
-        {todo.map((task) => (
-          <Task key={task.id} task={task} />
-        ))}
+        {todo !== null
+          ? todo.map((task) => <Task key={task.id} task={task} />)
+          : ""}
         <AddNew type={"todo"} />
       </Grid.Column>
       <Grid.Column>
@@ -30,9 +30,9 @@ function HomePage() {
           WIP{" "}
           <span style={{ fontSize: 15 }}>{wip !== null ? wip.length : 0}</span>
         </h1>
-        {wip.map((task) => (
-          <Task key={task.id} task={task} />
-        ))}
+        {wip !== null
+          ? wip.map((task) => <Task key={task.id} task={task} />)
+          : ""}
         <AddNew type={"wip"} />
       </Grid.Column>
       <Grid.Column>
@@ -42,9 +42,9 @@ function HomePage() {
             {done !== null ? done.length : 0}
           </span>
         </h1>
-        {done.map((task) => (
-          <Task key={task.id} task={task} />
-        ))}
+        {done !== null
+          ? done.map((task) => <Task key={task.id} task={task} />)
+          : ""}
         <AddNew type={"done"} />
       </Grid.Column>
     </Grid>
