@@ -1,0 +1,19 @@
+.taskpage-card {
+  width: 600px !important;
+  margin: 50px auto !important;
+}
+
+.taskpage-header {
+  font-size: 40px !important;
+}
+
+.taskpage-details {
+  font-size: 20px;
+  border: 1px solid gray;
+  margin: 20px 0 !important;
+  padding: 10px;
+}
+
+.buttons:hover {
+  background-color: lightcoral;
+}
