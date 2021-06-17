@@ -78,7 +78,9 @@ function TaskPage(props) {
                   </Card.Description>
                   <Card.Description>
                     <h2>Description:</h2>
-                    <p className="taskpage-details">{task.desc}</p>
+                    <p className="taskpage-details">
+                      <pre>{task.desc}</pre>
+                    </p>
                   </Card.Description>
                   <EditTask
                     type={"wip"}
@@ -124,7 +126,9 @@ function TaskPage(props) {
                   </Card.Description>
                   <Card.Description>
                     <h2>Description:</h2>
-                    <p className="taskpage-details">{task.desc}</p>
+                    <p className="taskpage-details">
+                      <pre>{task.desc}</pre>
+                    </p>
                   </Card.Description>
                   <EditTask
                     type={"done"}
